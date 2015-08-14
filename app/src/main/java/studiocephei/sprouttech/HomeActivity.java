@@ -2,6 +2,7 @@ package studiocephei.sprouttech;
 
 
 import android.app.Activity;
+import android.content.Intent;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -177,10 +178,8 @@ public class HomeActivity extends FragmentActivity
     }
 
     public void switchToInvestment(){
-        FragmentInvestment fragmentInvestment = new FragmentInvestment();
-        FragmentManager fragmentManager = getSupportFragmentManager();
-        setActionBarTitle("Invest");
-        fragmentManager.beginTransaction().replace(mContainerRes, fragmentInvestment).commit();
+        Intent i = new Intent(this, InvestmentActivity.class);
+        startActivity(i);
     }
 
 

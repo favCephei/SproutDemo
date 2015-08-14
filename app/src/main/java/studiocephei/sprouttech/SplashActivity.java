@@ -28,8 +28,6 @@ public class SplashActivity extends Activity {
         super.onCreate(savedInstanceState);
         FacebookSdk.sdkInitialize(getApplicationContext());
         setContentView(R.layout.activity_splash);
-        ActionBar actionBar = getActionBar();
-        actionBar.hide();
         mTypeface = Typeface.createFromAsset(getAssets(), "gothic.TTF");
         mTxtSlogan = (TextView) findViewById(R.id.txt_slogan);
         mTxtSlogan.setTypeface(mTypeface);

@@ -17,4 +17,18 @@
     <string name="txt_next">NEXT</string>
     <string name="txt_consolidate">CONSOLIDATE</string>
     <string name="txt_grow_your_sprout">GROW YOUR SPROUT</string>
+    <string name="title_activity_investment">InvestmentActivity</string>
+
+    <string name="title_section1">Section 1</string>
+    <string name="title_section2">Section 2</string>
+    <string name="title_section3">Section 3</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_example">Example action</string>
+    <string-array name="tabs">
+        <item>IMAGE</item>
+        <item>TECHNICAL</item>
+    </string-array>
 </resources>
