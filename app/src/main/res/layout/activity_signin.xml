@@ -11,7 +11,8 @@
 <LinearLayout
     android:layout_width="fill_parent"
     android:layout_height="wrap_content"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:id="@+id/linearLayout">
 
     <com.facebook.login.widget.LoginButton
         android:id="@+id/login_button"
@@ -59,7 +60,8 @@
     <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:layout_gravity="center">
 
 
         <EditText
@@ -72,15 +74,20 @@
         <EditText
             android:id="@+id/et_password"
             android:layout_width="fill_parent"
-            android:layout_height="wrap_content" />
-
-
-        <TextView
-            android:layout_marginTop="15dp"
-            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:gravity="center_horizontal"
-            android:text="We use your email to send you any important additional documents"/>
+            android:password="true"/>
+
+        <Button
+            android:id="@+id/btn_next"
+            android:background="@color/White"
+            android:textColor="@color/DarkBlue"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:padding="20dp"
+            android:textSize="32dp"
+            android:text="@string/txt_next"/>
+
 
     </LinearLayout>
 
@@ -89,12 +96,24 @@
 
 
     <Button
-        android:layout_width="wrap_content"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:text="SKIP"
+        android:padding="20dp"
+        android:textSize="32dp"
         android:textColor="@color/Red"
         android:id="@+id/btn_dev_skip"
         android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:layout_marginTop="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="We use your email to send you any important additional documents"
+        android:layout_below="@+id/linearLayout"
+        android:textColor="@color/White"
         android:layout_centerHorizontal="true" />
 
 

@@ -16,6 +16,7 @@ public class Constants {
         final int height = options.outHeight;
         final int width = options.outWidth;
         int inSampleSize = 1;
+        //next version
 
         if (height > reqHeight || width > reqWidth) {
 

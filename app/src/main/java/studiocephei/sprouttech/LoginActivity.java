@@ -3,10 +3,12 @@ package studiocephei.sprouttech;
 import android.app.ActionBar;
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import com.parse.ParseUser;
 
@@ -30,6 +32,12 @@ public class LoginActivity extends Activity {
         mBtnRegister.setTypeface(mTypeface);
         mBtnSignIn.setTypeface(mTypeface);
         mTxtSlogan.setTypeface(mTypeface);
+        ImageView ivLogo = (ImageView) findViewById(R.id.iv_logo);
+        ImageView ivTitleLogo = (ImageView) findViewById(R.id.iv_title_logo);
+        Bitmap bitTitle = Constants.decodeSampledBitmapFromResource(getResources(),R.drawable.sprout_png, 800, 800);
+        Bitmap bitLogo = Constants.decodeSampledBitmapFromResource(getResources(),R.drawable.leaf_png, 800, 800);
+        ivLogo.setImageBitmap(bitLogo);
+        ivTitleLogo.setImageBitmap(bitTitle);
         //if user is already logged in go to homeActivity
         if (mCurrentUser != null) openOverview();
         setListeners();

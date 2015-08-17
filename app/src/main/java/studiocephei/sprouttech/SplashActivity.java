@@ -3,11 +3,13 @@ package studiocephei.sprouttech;
 import android.app.ActionBar;
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
@@ -31,6 +33,12 @@ public class SplashActivity extends Activity {
         mTypeface = Typeface.createFromAsset(getAssets(), "gothic.TTF");
         mTxtSlogan = (TextView) findViewById(R.id.txt_slogan);
         mTxtSlogan.setTypeface(mTypeface);
+        ImageView ivLogo = (ImageView) findViewById(R.id.iv_logo);
+        ImageView ivTitleLogo = (ImageView) findViewById(R.id.iv_title_logo);
+        Bitmap bitTitle = Constants.decodeSampledBitmapFromResource(getResources(),R.drawable.sprout_png, 400, 400);
+        Bitmap bitLogo = Constants.decodeSampledBitmapFromResource(getResources(),R.drawable.leaf_png, 400, 400);
+        ivLogo.setImageBitmap(bitLogo);
+        ivTitleLogo.setImageBitmap(bitTitle);
         Parse.enableLocalDatastore(this);
         Parse.initialize(this, "nQURh0ji1BfeZinz96yKq6jWgt44DA0sOatY2d4O", "4P7PDnNGGLW9GNzgTJrLrZp8FIAZr4pytOVCFgTs");
         ParseFacebookUtils.initialize(this);

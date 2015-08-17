@@ -39,15 +39,7 @@ public class InvestmentActivity extends AppCompatActivity {
 
             @Override
             public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
-                Fragment frag = getSupportFragmentManager().findFragmentByTag("android:switcher:" + R.id.pager + ":" + mPager.getCurrentItem());
-                //image fragment
-                if (mPager.getCurrentItem() == 0){
-                    ((FragmentImage)frag).update(mChoice);
-                }
-                else if (mPager.getCurrentItem() == 1){
-                    ((FragmentTechnical)frag).update(mChoice);
-
-                }
+                updateImage(mChoice);
             }
 
             @Override
@@ -64,16 +56,7 @@ public class InvestmentActivity extends AppCompatActivity {
             @Override
 
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-                Fragment frag = getSupportFragmentManager().findFragmentByTag("android:switcher:" + R.id.pager + ":" + mPager.getCurrentItem());
-                //image fragment
-                mChoice = progress;
-                if (mPager.getCurrentItem() == 0){
-                    ((FragmentImage)frag).update(progress);
-                }
-                else if (mPager.getCurrentItem() == 1){
-                    ((FragmentTechnical)frag).update(progress);
-
-                }
+               updateImage(progress);
             }
 
             @Override
@@ -90,6 +73,19 @@ public class InvestmentActivity extends AppCompatActivity {
 
         public int getChoice(){
         return mChoice;
+    }
+
+    public void updateImage(int progress){
+        Fragment frag = getSupportFragmentManager().findFragmentByTag("android:switcher:" + R.id.pager + ":" + mPager.getCurrentItem());
+        //image fragment
+        mChoice = progress;
+        if (mPager.getCurrentItem() == 0){
+            ((FragmentImage)frag).update(mChoice);
+        }
+        else if (mPager.getCurrentItem() == 1){
+            ((FragmentTechnical)frag).update(mChoice);
+
+        }
     }
 
 
